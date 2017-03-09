@@ -1,7 +1,7 @@
 
 class PostsController < ApplicationController
 
-	before_ation :auntheticate_user!
+	# before_ation :auntheticate_user!
 
 
 	def create 
