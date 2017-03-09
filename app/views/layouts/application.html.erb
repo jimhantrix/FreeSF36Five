@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FreeSF-36Five|| Jim Tekanyo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+
+
+
+  <% flash.each do |name, message|%>
+  <<p><%= message%></p>
+  <% end %>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/About">FreeSF36Five</a>
+    </div>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/categories/new">Categories <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/categories?sort=chef">San Francisco Calendar</a></li>
+            <li><a href="/categories?sort=title">Oakland Calendar</a></li>
+            <li><a href="/categories?sort=title">East Bay Calendar</a></li><li><a href="/categories?sort=title">Bay area Calendar</a></li>
+            <li><a href="/categories?sort=title">North Bay area</a></li><li><a href="/categories?sort=title">South Bay area</a></li><li><a href="/categories?sort=title">Peninsula Events</a></li>
+          </ul>
+        </li><li class="dropdown">
+
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Member<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/categories?sort=chef">Log In</a></li>
+            <li><a href="/categories?sort=title">Sign Up</a></li>
+            
+          </ul>
+        </li>
+        <li><a href="/categories?quick=true">Today</a></li>
+        <li><a href="/categories/random">Weekend</a></li>
+        <li><a href="/categories/random">Free</a></li>
+        <li><a href="/categories/random">Add Post</a></li>
+        <li><a href="/categories/random">Cheapstakes</a></li>
+        
+      </ul> 
+      
+
+  </div>
+  <h1 class="jumbotron homepage text-center">FreeSF36Five</h1>
+        <p class="text-center">Where everything is Free</p>
+
+  
+  	<div class="container">
+  	
+    	<%= yield %>
+   
+  </body>
+</html>

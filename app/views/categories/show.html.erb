@@ -1,0 +1,9 @@
+
+
+<p> Name: <%= @category.name%></p>
+
+<a class="btn btn-default" href="/category/<%=@category.id%>/edit" role="button">Edit</a>
+
+<%=form_tag "/category/#{@category.id}",method: :delete do %>
+<input class="btn btn-default" type="submit" value="Desroy recipe">
+<%end%>

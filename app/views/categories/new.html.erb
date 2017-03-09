@@ -1,0 +1,5 @@
+<%=  form_tag "/categories", method: :post do %>
+  <div>
+    <%= text_field_tag :name, nil, placeholder: "Name" %>
+  </div>
+<%= submit_tag “Add Library” %>
