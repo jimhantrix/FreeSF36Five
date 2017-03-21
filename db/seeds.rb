@@ -7,69 +7,63 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-names = ['Dummy', 'Crashy', 'Runny', 'Bloody']
 
-	names.each do |name|
+100.times do 
+	user = User.create(
 
-		user = User.create(
+		first_name: Faker::Name.first_name,
 
-		first_name: name,
+		last_name: Faker::Name.last_name,
 
-	  	last_name: Faker::Name.last_name,
+		email: "example@gmail.com",
 
-	  	email: "#{name}@gmail.com",
+		phone: Faker::PhoneNumber.phone_number,
 
-	  	phone: Faker::PhoneNumber.phone_number,
+		street: Faker::Address.street_address,
 
-	  	street: Faker::Address.street_address,
+		city: Faker::Address.city,
 
-	  	city: Faker::Address.city,
+		state: Faker::Address.state,
 
-	  	state: Faker::Address.state,
+		zip_code: Faker::Address.zip,
 
-	  	zip_code: Faker::Address.zip,
+		password: "password")
+end 
 
-	  	password: "password")
+
+posts = [1,2,3,4,5,6,7,8,9]
+posts.each do |x|
+
+	3.times do 
+		Post.create!([
+			user_id: x,
+			description: Faker::Name.prefix,
+			title: Faker::title,
+			category: Faker::Matz.qoute 
+			])
+	end 
 
 
-		
-		3.times do
-	       post = Post.create(
+	2.times do 
 
-	      title: Faker::Lorem.sentence,
+		category.create!([
+			category: Faker::Commerce.department
+			])
 
-	      description: Faker::Lorem.paragraph(1),
-
-	      # category: Faker::Commerce.department,
-
-	      user_id: user.id)
-		end
 	end
-	categories = ["Home", "Tools","Entertainment","Clothing & Accesories","Family","Electronics","Hobbies","Vehicles","Classified"]
 
-		categories.each do |category|
-
-    		category = Category.create(
-    			
-      		name: category
-      		)
-    	end 
+	3.times do ([
+			url: Faker::Avatar.images
+			])
+	end
+	puts "Done!"
+end 
 
 
-    		# 3.times do 
-      # 			user_category = User_category.create(
-
-      # 			names: categories.id, 
-      # 			user_id: user.id 
-      # 			)
-      # 		end 
 
 
-  # 10.times do
-  #   post = Posts.create(
-  #     name: Faker::Commerce.department,
-  #     sub_category: Faker::Commerce.department,
-  #     user_id: user.id
-  #   )
-  # end 
-puts "Done!"
+
+
+
+
+

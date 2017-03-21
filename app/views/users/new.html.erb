@@ -1,24 +1,32 @@
 
 
 
-<!-- <h1 class="jumbotron homepage text-center">FreeSF36Five</h1>
-        <p class="text-center">Where everything is Free</p>
- -->
 
-  <%= form_tag "/users", method: :post do %>
 
-  	<div>
-     	<%= text_field_tag :first_name, nil, placeholder: "First Name" %>
-  	</div>
-  <div>
-    <%= text_field_tag :last_name, nil, placeholder: "Last Name" %>
-  </div>
- <div>
-    <%= text_field_tag :email, nil, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= password_field_tag :password, nil, placeholder: "Password" %>
-  </div>
-  <%=submit_tag %>
+<%= form_tag "/users", method: :post do %>
 
+
+<div class="text-center row">
+   
+
+    	<div>
+       	<%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+    	</div>
+    <div>
+      <%= text_field_tag :last_name, nil, placeholder: "Last Name" %>
+    </div>
+   <div>
+      <%= text_field_tag :email, nil, placeholder: "Email" %>
+    </div>
+    <div>
+      <%= password_field_tag :password, nil, placeholder: "Password" %>
+    </div>
+
+    <%=submit_tag %>
   <% end %>
+  
+  
+  <div class="images" id>
+        <img src="https://www.nps.gov/prsf/planyourvisit/images/ggb.jpg">
+
+  </div>

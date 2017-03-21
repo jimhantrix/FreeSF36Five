@@ -8,8 +8,10 @@
     </ul>
   </p>
 
-  <a class="btn btn-default" href="/recipes/<%= @category.id %>/edit" role="button">Edit</a>
+  <a class="btn btn-default" href="/categories/<%= @category.id %>/edit" role="button">Edit</a>
 
   <%= form_tag "/categories/#{@category.id}", method: :delete do %>
   <input class="btn btn-default" type="submit" value="Delete category">
-  <% end %>
+  
+<% end %>
+  

@@ -1,7 +1,9 @@
 class CategoriesController < ApplicationController
 
+	before_action :aunthenticate_admin!
 
-	before_action :aunthenticate_admin!, except:[:index, :show, :search]
+
+	 before_action :aunthenticate_admin!, except:[:index, :show, :search]
 
 	def index 
 		if session[:count] == nil 
@@ -10,14 +12,16 @@ class CategoriesController < ApplicationController
 		session[:count] += 1
 		@visit_count = session[:count]
 		@category= Category.all 
-		# if params[:category]
-		# 	@categories = Category.find_by(params[:name] params[:category]).categories
-		#end 
+		if params[:category]
+			@categories = Category.find_by(name: params[:category]).categories
+		end 
 	end 
 
 
 
 	def new 
+
+		@category = Category.new
 		
 	end 
 
@@ -25,7 +29,7 @@ class CategoriesController < ApplicationController
 	def create 
 		@category = Category.create(
 
-			name: params[:name],
+			category: params[:category],
 			user_id: current_user.id,
 			status:"Category created"
 		)
@@ -34,16 +38,24 @@ class CategoriesController < ApplicationController
 			flash[:success] = "Category Created"
 			redirect_to "/category/#{@category.id}"
 		else 
-			render :new 
+			 render :new 
 		end 
 	end 
 
-	def show 
 
+
+
+
+	def show 
 		@category = Category.find_by(id: params[:id])
 
-		@images = category.images
+		# @user = @category.post
+		# @images = @category.images	
 	end
+
+
+
+
 
 	def edit 
 
@@ -51,11 +63,15 @@ class CategoriesController < ApplicationController
 		#status: "Category succesfully edited"
 	end 
 
+
+
+
+
 	def update 
 
 			@category = Category.find_by(id: params[:id])
 			@category.update(
-				name: params[:name],
+				category: params[:category]
 
 			)
 		if @category.save 
@@ -63,13 +79,16 @@ class CategoriesController < ApplicationController
 		 redirect_to "/category/#{@category}"
 		 else 
 
-		 render :edit
+		 	render	:edit 
 		end 
 	end 
 
+
+
+
 	def destroy 
 
-		@category = Category.find_by(id: params[:id])
+		@category = Category.find_by(category_id: params[:id])
 		@category.destroy
 
 		flash[:warning] = "Category deleted"
@@ -77,7 +96,13 @@ class CategoriesController < ApplicationController
 		
 	end 
 
+
+
+
 	def search 
 
 	end  
+
+
+	
 end

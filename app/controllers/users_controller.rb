@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
 	def new 
+		@user = User.new 
+	
 	end 
-
+	
 	def create 
 		user = User.new(
 
@@ -20,7 +22,7 @@ class UsersController < ApplicationController
 		if user.save 
 			session[:user_id] = user.id 
 			flash[:success] = "Succefully created account!"
-			redirect_to users_path(@user)
+			redirect_to'/'
 		 else 
 			flash[:warning] = "Invalid email or password"
 			redirect_to "/singup"

@@ -1,5 +1,31 @@
-<%=  form_tag "/categories", method: :post do %>
-  <div>
-    <%= text_field_tag :name, nil, placeholder: "Name" %>
+
+
+  <a href="/posts?sort=prep_time&sort_order=ASC">Sort by ascending prep time</a>
+  <a href="/posts?sort=prep_time&sort_order=DESC">Sort by descending prep time</a>
+</div>
+
+<% @posts.each_slice(3) do |three_posts| %>
+  <div class="row">
+    <% three_posts.each do |post| %>
+      <div class="col-md-4 col-sm-4">
+        <div class="well">
+          <h2>Title: <a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
+          <p>Description: <%= post.user %></p>
+          <p>category: <%= post.ingredients %></p>
+          <p>user_category: <%= post.directions %></p>
+          
+          <img src="<%= post.image %>" alt=""><br>
+        </div>
+      </div>
+    <% end %>
   </div>
-<%= submit_tag “Add Library” %>
+<% end %>
+
+
+
+
+
+
+
+
+
