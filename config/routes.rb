@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 	resources :categories 
 	# get "/" => "categories#index"
 
-	# get "/categories" => "categories#show"
+	 get "/categories" => "categories#show"
 
 	# get "/categories/:id/edit" => "categories#edit"
 
@@ -53,7 +53,7 @@ Rails.application.routes.draw do
 
  #  	post "/categories" => "categories#create", as: "user_categories"
 
- #  	get "/categories/:id" =>"categories#show"
+ 	get "/categories/:id" =>"categories#show"
 
 
 

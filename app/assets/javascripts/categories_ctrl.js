@@ -10,7 +10,7 @@
     $scope.Tools = "Tools";
     $scope.Clothing = "Clothing";
     $scope.Entertainment = "Entertainment";
-    $cope.Electronics = "Electrinics";
+    $cope.Electronics = "Electronics";
     $scope.Hobbies = "Hobbies";
     $scope.Classified = "Classified";
 
@@ -23,4 +23,3 @@
 
 
 
-document.getElementById("home").innerHTML="Hello World!";

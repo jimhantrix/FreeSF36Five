@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
 		end 
 		session[:count] += 1
 		@visit_count = session[:count]
-		@category= Category.all 
+		@categories= Category.all 
 		if params[:category]
 			@categories = Category.find_by(name: params[:category]).categories
 		end 

@@ -1,1 +1,29 @@
-<p>This is a post edit page</p>
+
+<h2 class="text-center row">
+   <section>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="product_single">
+            <h1>Edit a Post</h1>
+
+            <%= form_tag "/posts/#{@post.id}", method: :patch do %>
+              <div>
+                <%= label_tag :title %>
+                <%= text_field_tag :title, @post.title %>
+              </div>
+              
+              <div>
+                <%= label_tag :category_id %>
+                <%= text_field_tag :category_id, @post.category_id %>
+              </div>
+               <div>
+                <%= label_tag :description %>
+                <%= text_field_tag :description, @post.description %>
+              </div>
+              <%= submit_tag "Edit Post" %>
+              
+            <% end %>
+          </div>
+        </div>
+      </div>
+</section>

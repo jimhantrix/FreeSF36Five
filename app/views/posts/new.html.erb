@@ -5,9 +5,9 @@
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <div class="product_single">
-            <h1>Create a new nerdy product:</h1>
+            <h1>Create a Post:</h1>
 
-            <%= form_tag '/products', method: :post do %>
+            <%= form_tag '/posts', method: :post do %>
 
               <div>
                 <%= label_tag :title %>
@@ -15,21 +15,18 @@
               </div>
               
               <div>
-                <%= label_tag :category %>
-                <%= text_field_tag :category %>
+
+              
+          <%= label_tag :category_id, nil, id: "black-color" %>
+          <%= collection_select :category_id, :id, Category.all.order('category ASC'), :id, :category, class: "form-control" %>
+        
+
+                <%= text_field_tag :category_id %>
               </div>
                <div>
                 <%= label_tag :description %>
                 <%= text_field_tag :description %>
               </div>
-              
-              <div>
-                <%= label_tag :image %>
-                <%= text_field_tag :image %>
-              </div>
-              
-             
-
               <%= submit_tag "Create Post" %>
             <% end %>
           </div>
