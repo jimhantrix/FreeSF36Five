@@ -1,25 +1,52 @@
 
+<h2 class="text-center row">
 
-  <a href="/posts?sort=prep_time&sort_order=ASC">Sort by ascending prep time</a>
-  <a href="/posts?sort=prep_time&sort_order=DESC">Sort by descending prep time</a>
-</div>
 
-<% @posts.each_slice(3) do |three_posts| %>
-  <div class="row">
-    <% three_posts.each do |post| %>
-      <div class="col-md-4 col-sm-4">
-        <div class="well">
-          <h2>Title: <a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
-          <p>Description: <%= post.user %></p>
-          <p>category: <%= post.ingredients %></p>
-          <p>user_category: <%= post.directions %></p>
-          
-          <img src="<%= post.image %>" alt=""><br>
+   <section>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="product_single">
+
+
+
+            <h1>Create a New category:</h1>
+
+            <%= form_tag '/categories', method: :post do %>
+
+              <div>
+                <%= label_tag :title %>
+                <%= text_field_tag :title %>
+              </div>
+              
+              <div>
+
+              
+                <%= label_tag :category_id, nil, id: "black-color" %>
+                
+                <%= collection_select :category_id, :id, Category.all.order('category ASC'), :id, :category, class: "form-control" %>
+              
+
+                    <%= text_field_tag :category_id %>
+
+
+              </div>
+
+
+
+               <div>
+                <%= label_tag :description %>
+                <%= text_field_tag :description %>
+              </div>
+
+
+              <%= submit_tag "Category created" %>
+            <% end %>
+
+
+          </div>
         </div>
       </div>
-    <% end %>
-  </div>
-<% end %>
+    </section>
 
 
 

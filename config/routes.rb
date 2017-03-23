@@ -25,15 +25,15 @@ Rails.application.routes.draw do
 
 
 
-	#session routes 
-	resources :sessions
-	# get "/login" => "sessions#new"
+	
+	
+	get "/login" => "sessions#new"
 
-	# # get "/sessions" => "signup#new_user"
+	
 
-	# post "/sessions" => "sessions#create"
+	post "/sessions" => "sessions#create"
 
-	# get "/logout" => "sessions#destroy"
+	get "/logout" => "sessions#destroy"
 
 
 
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 	resources :categories 
 	# get "/" => "categories#index"
 
-	 get "/categories" => "categories#show"
+	 # get "/categories" => "categories#index"
 
 	# get "/categories/:id/edit" => "categories#edit"
 
@@ -52,8 +52,6 @@ Rails.application.routes.draw do
 	# get "/categories/new" => "categories#new", as:"new_category"
 
  #  	post "/categories" => "categories#create", as: "user_categories"
-
- 	get "/categories/:id" =>"categories#show"
 
 
 

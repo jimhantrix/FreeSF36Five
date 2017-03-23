@@ -1,23 +1,25 @@
 class CategoriesController < ApplicationController
 
-	before_action :aunthenticate_admin!
+	# before_action :aunthenticate_admin!
 
 
-	 before_action :aunthenticate_admin!, except:[:index, :show, :search]
+	#  before_action :aunthenticate_admin!, except:[:index, :show, :search]
+
+
+
+	#index method 
 
 	def index 
-		if session[:count] == nil 
-			session[:count] = 0
-		end 
-		session[:count] += 1
-		@visit_count = session[:count]
-		@categories= Category.all 
-		if params[:category]
-			@categories = Category.find_by(name: params[:category]).categories
-		end 
+
+		@categories = Category.all 
+
 	end 
 
 
+
+
+
+	#new method 
 
 	def new 
 
@@ -26,7 +28,14 @@ class CategoriesController < ApplicationController
 	end 
 
 
+
+
+
+	# create method 
+
 	def create 
+
+
 		@category = Category.create(
 
 			category: params[:category],
@@ -36,48 +45,58 @@ class CategoriesController < ApplicationController
 	 
 		if @category.save 
 			flash[:success] = "Category Created"
-			redirect_to "/category/#{@category.id}"
+			redirect_to "/"
 		else 
-			 render :new 
+
+			render :new 
 		end 
 	end 
 
 
 
 
+	#show method 
 
 	def show 
-		@category = Category.find_by(id: params[:id])
 
-		# @user = @category.post
-		# @images = @category.images	
+		@category = Category.find_by(id: params[:id])
+		
 	end
 
 
 
-
+	#edit method 
 
 	def edit 
 
 		@category = Category.find_by(id: params[:id])
-		#status: "Category succesfully edited"
+	
 	end 
 
 
 
 
+	#edit Method 
 
 	def update 
 
-			@category = Category.find_by(id: params[:id])
-			@category.update(
-				category: params[:category]
+		@category = Category.find_by(id: params[:id])
 
-			)
+
+		@category.update(
+
+		category: params[:category]
+		
+		)
+
+
 		if @category.save 
+
 		 flash[:success] = "Category Updated"
-		 redirect_to "/category/#{@category}"
+		 redirect_to "/category/#{@categorys}"
+		 
 		 else 
+
 
 		 	render	:edit 
 		end 
@@ -85,6 +104,10 @@ class CategoriesController < ApplicationController
 
 
 
+
+
+
+	# delete method 
 
 	def destroy 
 
@@ -99,7 +122,12 @@ class CategoriesController < ApplicationController
 
 
 
+
+
+	# search method 
 	def search 
+
+		@category = Category.find_by()
 
 	end  
 

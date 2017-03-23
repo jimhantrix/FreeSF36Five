@@ -1,9 +1,6 @@
 
-
-
-
-
-
+	Category.destroy_all
+	User.destroy_all
 
 	10.times do 
 		User.create!(
@@ -21,33 +18,20 @@
 
 
 
-	categories = ["Home", "Entertainment", "Tools", "Clothing", "Entertainment", "Hobbies", "Classified"]
+	categories = ["Home ", "Tools ", "Clothing ", "Entertainment", "Hobbies", "Classified"]
 
-	count = 0
 
 	categories.each do |category|
 
-		 category[count]
-		count += 1
+		Category.create(category: category)
+
 	end 
 
 	puts categories
 
 
 
-	# 10.times do 
-	# 	Post.create!(
-
-	# 		:title Faker:: 
-
-	# 		:description Faker::
-
-
-	# 		)
-
-
-
-
+	
 	
 
 

@@ -1,35 +1,51 @@
+
+
+
+
+
+
+
+
+
+
 <h2 class="text-center row">
 
 
-   <section>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <div class="product_single">
-            <h1>Create a Post:</h1>
+  <section>
+    <div class="row">
+
+      <div class="col-sm-8 col-sm-offset-2">
+
+
+        <div class="product_single">
+
+          <h1 class="jumbotron hero-spacer">Create a Post</h1>
 
             <%= form_tag '/posts', method: :post do %>
 
-              <div>
-                <%= label_tag :title %>
-                <%= text_field_tag :title %>
-              </div>
+          <div>
+            <%= label_tag :title %>
+            <%= text_field_tag :title %>
+          </div>
               
-              <div>
+            <div>
 
               
-          <%= label_tag :category_id, nil, id: "black-color" %>
-          <%= collection_select :category_id, :id, Category.all.order('category ASC'), :id, :category, class: "form-control" %>
-        
+              <%= label_tag :category_id, nil, id: "black-color" %>
+              
+              <%= collection_select :category_id, :id,
 
-                <%= text_field_tag :category_id %>
-              </div>
+
+               Category.all.order('category ASC'), :id, :category, class: "form-control" %>
+          
+            </div>
                <div>
                 <%= label_tag :description %>
                 <%= text_field_tag :description %>
               </div>
               <%= submit_tag "Create Post" %>
             <% end %>
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>

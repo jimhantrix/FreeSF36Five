@@ -1,127 +1,71 @@
 
 
-<body>
 
-    <!-- Navigation -->
+
+  
 
 
     <!-- Page Content -->
+    <td>
+
+    <h1>FreeSF36Five</h1>
+
+    </td>
+
+    <h2 class ="text-center row "
+    <br></br><br>
     <div class="container">
 
         <!-- Jumbotron Header -->
-        <header class="jumbotron hero-spacer">
-            <h1>Posts Show Page!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
-            </p>
-        </header>
+        <h1 class="jumbotron hero-spacer"><br><br>
 
-        <hr>
+        <di><br><br>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="product_single">
 
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Latest Features</h3>
+                        <h1>Your current Post</h1>
+                        <h2>Title: <%@post%></h2>
+                        
+                        <div>
+                        <img src="https://st.hzcdn.com/simgs/3c2178bb04b7e871_4-0276/contemporary-armchairs-and-accent-chairs.jpg">
+                        </div>
+                        <span>
+                        
+                        <p>Description: <%@post%></p>
+                        <p>Category: <%@post%></p>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- /.row -->
+                
+        <p>
 
-        <!-- Page Features -->
-        <div class="row text-center">
+            <a href ="/posts/#{destroy}" class="btn btn-primary btn-large">Delete Post!</a>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <a href="/posts/edit" class="btn btn-primary btn-large"> Edit Post!</a>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <section>
-    <div class="row">    
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="postsingle">
+        </p>
 
 
 
 
-            <p>Title: <%= @post.title %></p>
-
-             <p>Category:<%= @post.category %></p>
-            
-
-             <p>Description:<%= @post.description %></p>
-
-             <p>User_categories: <%= @post.user_categories %></p>
 
 
-            <img src="<%= @image %>"  class="img-responsive">
-            
-
-            <%= link_to "Edit", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
-            <%= link_to "Delete", "/posts/#{@post.id}", {method: :delete, class: "btn btn-danger" }%>
         
-        </div>
-      </div>
-    </div>
-  </section>
-        <!-- /.row -->
 
-    <!-- /.container -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
-</body>
 
-</html>
+
+
+
+
+
+
+
+
+
+

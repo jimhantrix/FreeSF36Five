@@ -1,29 +1,48 @@
 
-<h2 class="text-center row">
-   <section>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <div class="product_single">
-            <h1>Edit a Post</h1>
+  <!-- Page Content -->
+    <h2 class ="text-center row "
+    <br></br><br>
+    <div class="container">
 
-            <%= form_tag "/posts/#{@post.id}", method: :patch do %>
-              <div>
-                <%= label_tag :title %>
-                <%= text_field_tag :title, @post.title %>
-              </div>
-              
-              <div>
-                <%= label_tag :category_id %>
-                <%= text_field_tag :category_id, @post.category_id %>
-              </div>
-               <div>
-                <%= label_tag :description %>
-                <%= text_field_tag :description, @post.description %>
-              </div>
-              <%= submit_tag "Edit Post" %>
-              
-            <% end %>
-          </div>
-        </div>
-      </div>
-</section>
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+
+        <section>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="product_single">
+
+                        <h1>Edit current Post</h1>
+
+                        <h2>Title: <%@post%></h2>
+
+
+                        <img src="/images/">
+
+                        <span>
+                        
+                        <p>Description: <%@post%></p>
+                        <p>Category: <%@post%></p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+
+           
+
+        </header>
+
+        <p><a class="btn btn-primary btn-large">Save Post!</a>
+            </p>
+
+
+
+
+
+ 
+
+
+
+

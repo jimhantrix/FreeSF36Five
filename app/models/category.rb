@@ -1,5 +1,7 @@
 class Category < ApplicationRecord
 
+
+
 	has_many :posts
 
 	has_many :user_categories
@@ -7,4 +9,7 @@ class Category < ApplicationRecord
 	has_many :users, through: :user_categories
 
 	validates :category, presence: true 
+
+	
+
 end

@@ -6,6 +6,10 @@ class ImagesController < ApplicationController
   def new
   end
 
+
+
+
+
   def create
     category_id = params[:product]['category_id']
     @image = Image.create(
@@ -15,5 +19,9 @@ class ImagesController < ApplicationController
     flash[:success] = "Image Created"
     redirect_to "/products/#{category_id}"
   end
+
+
+
+  
 
 end

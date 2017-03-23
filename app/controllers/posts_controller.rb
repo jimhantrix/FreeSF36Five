@@ -3,20 +3,33 @@ class PostsController < ApplicationController
 
 	 # before_ation :auntheticate_user! 
 
+
+
+
+	 # index method 
+
 	def index 
 	 	@post = Post.all
 
 	end 
 
 
+
+
+
+	# new post method 
+
 	def new 
 	 	@post = Post.new
-
 	end 
 
 
 
-	 def create
+
+	#create method 
+	def create
+
+
 	 	post = Post.create(
 	 		title: params[:title],
 	 		description: params[:description],
@@ -31,35 +44,31 @@ class PostsController < ApplicationController
 
 
 
-
+	# edit method 
 
 	def update 
 
 	 	@post = Post.find_by(id: params[:id]) 
 	 	@post.update(
 	 		title: params[:title],
+	 		category_id: params[:category_id],
 	 		description: params[:description],
 	 		user_id: current_user.id 
-
-	 		)
-	 	puts "*****************"
-	 	puts @post.errors.full_messages
-	 	# if @post.save 
-	 	# 	flash[:success] = "Post Updated"
-	 	# 	redirect_to "/post/#{@post}"
-	 	# else 
-
-	 	# 	redirect_to "/categories"
-	 	# end 
+	 	)
 	end 
 
 
+
+
+	#show method 
 
 	def show 
 	 	@post = Post.find_by(id: params[:id])
 	end 
 
 
+
+	#delete method 
 	def destroy 
 
 	 	post = Post.find_by(id: params[:id])
@@ -68,8 +77,11 @@ class PostsController < ApplicationController
 
 	 	flash[:success] = "Post removed"
 
-	 	redirect_to "/new"
+	 	redirect_to "/"
 	end
+
+
+
 
 	def edit
 		@post = Post.find_by(id: params[:id])
