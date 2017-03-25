@@ -14,15 +14,15 @@
 
                         <h1>Edit current Post</h1>
 
-                        <h2>Title: <%@post%></h2>
+                        <h2>Title: <%@post.category.category_id%></h2>
 
 
                         <img src="/images/">
 
                         <span>
                         
-                        <p>Description: <%@post%></p>
-                        <p>Category: <%@post%></p>
+                        <p>Description: <%@post.category_id.description%></p>
+                        <p>Category: <%@post.category_id.category%></p>
                         </span>
                     </div>
                 </div>

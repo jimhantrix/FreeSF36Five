@@ -18,7 +18,7 @@
 
 
 
-	categories = ["Home ", "Tools ", "Clothing ", "Entertainment", "Hobbies", "Classified"]
+	categories = ["Home ", "Tools ", "Clothing ", "Entertainment", "Hobbies", "Classified","Electronics"]
 
 
 	categories.each do |category|
@@ -29,6 +29,29 @@
 
 	puts categories
 
+
+
+
+
+
+Post.create!(
+
+				{title: "leather basketball", desription: "brown leather nba basket ball", category_id: "",user_id:  },
+				{title: "study chair", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  },
+				{title: "", desription: "", category_id: "",user_id:  }
+
+
+		)
 
 
 	

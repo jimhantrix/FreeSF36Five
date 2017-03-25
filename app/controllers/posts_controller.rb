@@ -3,13 +3,17 @@ class PostsController < ApplicationController
 
 	 # before_ation :auntheticate_user! 
 
+	  #before_action :authenticate_admin!, except: [:index, :show, :search]
+
 
 
 
 	 # index method 
 
 	def index 
-	 	@post = Post.all
+
+		# find an array of all posts with a cetegory id that matches the url parameters
+		@posts = Post.where(category_id: params[:category_id])
 
 	end 
 
@@ -31,10 +35,11 @@ class PostsController < ApplicationController
 
 
 	 	post = Post.create(
+	 		
 	 		title: params[:title],
 	 		description: params[:description],
 	 		category_id: params[:category_id],
-	 		user_id: current_user.id 
+	 		
 	 	)
 
 	 	flash[:success] = "post successfully created!"
@@ -50,10 +55,12 @@ class PostsController < ApplicationController
 
 	 	@post = Post.find_by(id: params[:id]) 
 	 	@post.update(
-	 		title: params[:title],
+
 	 		category_id: params[:category_id],
-	 		description: params[:description],
-	 		user_id: current_user.id 
+
+	 		title: params[:title],
+	 		
+	 		description: params[:description]	
 	 	)
 	end 
 
@@ -64,6 +71,7 @@ class PostsController < ApplicationController
 
 	def show 
 	 	@post = Post.find_by(id: params[:id])
+	 	@category = @post.category_id
 	end 
 
 
@@ -77,7 +85,7 @@ class PostsController < ApplicationController
 
 	 	flash[:success] = "Post removed"
 
-	 	redirect_to "/"
+	 	redirect_to "/categories/index"
 	end
 
 
@@ -86,5 +94,13 @@ class PostsController < ApplicationController
 	def edit
 		@post = Post.find_by(id: params[:id])
 	end
+
+	def search
+    search_term = params[:search]
+    #ping database to find recipes that are similar to search term
+    @posts = Post.where("title LIKE ?", "%#{search_term}%")
+    render :index
+  end
+
 
 end

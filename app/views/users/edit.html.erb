@@ -1,4 +1,5 @@
 
+
 <h2> Edit your Profile</h2>
 
 
@@ -8,37 +9,53 @@
 <div class="text-center row">
 
 
+
+    <!-- first_name form -->
+
       <div>
         <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+
       </div>
+
+
+
+    <!--  last_name form  -->
 
     <div>
       <%= text_field_tag :last_name, nil, placeholder: "Last Name" %>
     </div>
+
+
+    <!-- email -->
 
    <div>
       <%= text_field_tag :email, nil, placeholder: "Email" %>
     </div>
 
 
+    <!-- phone  -->
+
     <div>
       <%= text_field_tag :phone, nil, placeholder: "Control" %>
     </div>
 
+    
+    <!--  state  -->
 
      <div>
       <%= text_field_tag :state, nil, placeholder: "State" %>
     </div>
 
 
+    <!-- zip_code -->
+  
     <div>
       <%= text_field_tag :zip_code, nil, placeholder: "Zip_code" %>
     </div>
 
+      
 
-     <div>
-      <%= text_field_tag :street, nil, placeholder: "Zip_code" %>
-    </div>
+   <!--  password -->
 
 
      <div>
@@ -50,4 +67,3 @@
   <%=submit_tag %>
   
 <% end %>
-  

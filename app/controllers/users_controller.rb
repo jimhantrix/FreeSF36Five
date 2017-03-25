@@ -1,21 +1,13 @@
 class UsersController < ApplicationController
 
+	def new
 
-
-
-
-	def new 
-		@user = User.new 
-	
 	end 
 
 
 
-
-	
-	def create 
-		user = User.new(
-
+	def create
+		@user = User.new(
 			first_name: params[:first_name],
 			last_name: params[:last_name],
 			email: params[:email],
@@ -27,13 +19,51 @@ class UsersController < ApplicationController
 			password: params[:password],
 			password_confirmation: params[:password_confirmation]
 		)
-		if user.save 
+		if @user.save 
 			session[:user_id] = user.id 
 			flash[:success] = "Succefully created account!"
-			redirect_to'/login'
+			redirect_to'/categories#index'
 		 else 
 			flash[:warning] = "Invalid email or password"
-			redirect_to "/singup"
+			redirect_to "/login"
 		end 
-	end 
+	end
+
+
+
+	
+
+	def update
+	    user = User.find_by(id: params[:id])
+	    user.update(
+	      first_name: params[:first_name],
+	      last_name: params[:last_name],
+	      email: params[:email],
+	      phone: params[:phone],
+	      city: params[:city],
+	      state: params[:state],
+	      zip_code: params[:zip_code],
+	      street: params[:street],
+	      password: params[:password]
+	    )
+	    flash[:success] = "Successfully updated!"
+	    redirect_to "/"
+  end
+
+
+	def destroy
+	    
+	end
+
 end
+
+
+
+
+
+
+
+
+
+
+

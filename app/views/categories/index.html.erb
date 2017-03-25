@@ -1,76 +1,106 @@
 
 
+  <div class="container">
 
+          <!-- Jumbotron Header -->
 
+          <br><br>
+          
+          <header class="jumbotron hero-spacer">
 
- <div class="container">
+              <h1>FreeSF36Five</h1>
 
-        <!-- Jumbotron Header -->
-
-        <br><br>
         
-        <header class="jumbotron hero-spacer">
-
-            <h1>FreeSF36Five</h1>
-        
-        </header>
-
-</div>   
-
-
-  
+            
+          </header>
+  </div>
 
 
 
 
 
- 
+  <section>
 
 
+    <div class="row">
 
-        <div>
+      <table>
 
-            <div class="thumbnail">
+      <tr>
 
+        <% @categories.all.each do |category| %>
+
+         <div class="col-sm-4">
+
+            <div class="indexPage"><br><br>
+            
+
+            <container>
+
+
+      
+    
+              <h1><%= link_to category.category, "/categories/posts/#{category.id}" %><h1>
+
+
+              <div>
+                
+              
+              
+               
+                
+              </div>
+                <img src="#">
+                <div class="city">
+   
+              
                 
 
-                <div class="caption">
-               
-                        
-                   <table>
-                   <tr>
-      
-                    <ul>
+              </div>
+            
 
 
-                  <% Category.all.each do |category| %>
-                    <h1>
-
-                      <%= link_to category.category, "/categories/#{category.id}" %>
-                        
-
-                    </h1>
-                  <% end %>
-                </ul>
-
-
-              
-                      </tr>
-
-                    </table>
-                        
-                            
-                     
-
-         
-
-
-
-                 
+              <section>
+                <div>
+                    hello
+                 </div>
+              </section>
 
             </div>
+           
+             <a href="/posts/new"" class="btn btn-primary btn-large"> Add a Post!</a>
+             <a href="/posts/new"" class="btn btn-primary btn-large"> Add to My categories </a>
+
+            <br>
+            <br>
+
         </div>
-    </div>
+
+
+                          
+        
+
+        <% end %>
+
+
+    
+        
+
+</div>
+
+
+        
+
+           
+           
+            
+            
+
+    
+
+
+
+
 
 
 

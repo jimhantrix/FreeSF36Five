@@ -19,42 +19,6 @@ class CategoriesController < ApplicationController
 
 
 
-	#new method 
-
-	def new 
-
-		@category = Category.new
-		
-	end 
-
-
-
-
-
-	# create method 
-
-	def create 
-
-
-		@category = Category.create(
-
-			category: params[:category],
-			user_id: current_user.id,
-			status:"Category created"
-		)
-	 
-		if @category.save 
-			flash[:success] = "Category Created"
-			redirect_to "/"
-		else 
-
-			render :new 
-		end 
-	end 
-
-
-
-
 	#show method 
 
 	def show 
@@ -93,7 +57,7 @@ class CategoriesController < ApplicationController
 		if @category.save 
 
 		 flash[:success] = "Category Updated"
-		 redirect_to "/category/#{@categorys}"
+		 redirect_to "/category/#{@categories}"
 		 
 		 else 
 
@@ -101,26 +65,6 @@ class CategoriesController < ApplicationController
 		 	render	:edit 
 		end 
 	end 
-
-
-
-
-
-
-	# delete method 
-
-	def destroy 
-
-		@category = Category.find_by(category_id: params[:id])
-		@category.destroy
-
-		flash[:warning] = "Category deleted"
-		redirect_to "/"
-		
-	end 
-
-
-
 
 
 
