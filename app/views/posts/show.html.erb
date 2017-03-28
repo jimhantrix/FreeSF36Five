@@ -1,13 +1,7 @@
-   
-
-
-
-  
-
 
     <!-- Page Content -->
     <td>
-<h1 class="jumbotron hero-spacer"><br><br>
+    <h1 class="jumbotron hero-spacer"><br><br>
     Your Current Post</h1>
 
     </td>
@@ -18,18 +12,20 @@
 
         <!-- Jumbotron Header -->
         
-
         <di><br><br>
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
                     <div class="product_single">
 
+                        <h1><%=@post.category.category%></h1>
 
                         
-                        <h2>Title:</h2>
+                        <h2>Title: <%=@post.title%></h2>
+                        <p>Description: <%=@post.description%></p>
                         
                         <div>
-                        <img src="#">
+                            <img src="<%=@post.avatar.url(:medium) %>">
+
                         </div>
                         <span>
                         
@@ -43,11 +39,19 @@
                 
         <p>
 
-            <a href ="/categories/#{@post.id}/destroy" class="btn btn-primary btn-large">Delete Post!</a>
+        <%= form_tag "/posts/#{@post.id}", method: :delete do %>
 
-            <a href="/categories/#{@product.id}/edit" class="btn btn-primary btn-large"> Edit Post!</a>
+              <input class="btn btn-default" type="submit" value="Destroy Post">
 
-        </p>
+            <% end %>
+
+            <div class="form-group">
+
+           <a class="btn btn-default" href="/posts/<%= @post.id %>/edit" role="button">Edit</a>
+           </div>
+
+        
+
 
 
 

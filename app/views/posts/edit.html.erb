@@ -1,48 +1,51 @@
 
-  <!-- Page Content -->
-    <h2 class ="text-center row "
-    <br></br><br>
-    <div class="container">
-
-        <!-- Jumbotron Header -->
-        <header class="jumbotron hero-spacer">
-
-        <section>
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <div class="product_single">
-
-                        <h1>Edit current Post</h1>
-
-                        <h2>Title: <%@post.category.category_id%></h2>
+<h2 class="text-center row">
 
 
-                        <img src="/images/">
+  <section>
+    <div class="row">
 
-                        <span>
-                        
-                        <p>Description: <%@post.category_id.description%></p>
-                        <p>Category: <%@post.category_id.category%></p>
-                        </span>
-                    </div>
-                </div>
+      <div class="col-sm-8 col-sm-offset-2">
+
+
+        <div class="product_single">
+
+          <h1 class="jumbotron hero-spacer">Update Post</h1>
+
+            <%= form_tag '/posts', method: :post do %>
+
+          <div>
+   
             </div>
-        </section>
-                
+              
+            <div>
 
-           
-
-        </header>
-
-        <p><a class="btn btn-primary btn-large">Save Post!</a>
-            </p>
+              
+              <%= label_tag :category_id, nil, id: "black-color" %>
+              
+              <%= collection_select :category_id, :id,
 
 
+               Category.all.order('category ASC'), :id, :category, class: "form-control" %>
+          
+            </div>
 
+              <div>
+                <%= label_tag :description %>
+                <%= text_field_tag :description, @post.description %>
+                <div>
+                <%=label_tag :title %>
+                <%=text_field_tag :title %>
+                <%=form_tag "/posts/#{@post.id}",   multipart: true, method: :post do %>
+                <%=file_field_tag :avatar %>
+                <% end %>      
+                </div>
+              </div>
 
-
- 
-
-
-
-
+              
+              <%= submit_tag "Create Post" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </section>

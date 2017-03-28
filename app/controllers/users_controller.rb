@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
 
 	def new
 
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
 
 	def create
-		@user = User.new(
+		@user = User.create(
 			first_name: params[:first_name],
 			last_name: params[:last_name],
 			email: params[:email],
@@ -16,19 +16,16 @@ class UsersController < ApplicationController
 			city: params[:city],
 			zip_code: params[:zip_code],
 			street: params[:street],
-			password: params[:password],
-			password_confirmation: params[:password_confirmation]
+			password: params[:password]
 		)
-		if @user.save 
-			session[:user_id] = user.id 
-			flash[:success] = "Succefully created account!"
-			redirect_to'/categories#index'
-		 else 
-			flash[:warning] = "Invalid email or password"
-			redirect_to "/login"
-		end 
+		flash[:success] = "Login"
+		redirect_to '/login'
 	end
 
+	def avatar
+
+
+	end 
 
 
 	

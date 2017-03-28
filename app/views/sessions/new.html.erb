@@ -5,11 +5,7 @@
 <h1>FreeSF36Five</h1><br><br>
 <h2>Log in</h2>
 
-
-
-
-
-<%= form_tag "/login",  method: :post do  %>
+<%= form_tag "/sessions",  method: :post do  %>
 
   <div>
     <%= text_field_tag :email, nil, placeholder: "Email" %>
@@ -18,6 +14,7 @@
   <div>
     <%= password_field_tag :password, nil, placeholder: "Password" %>
   </div>
+ 
 
   <%= submit_tag "Login" %>
 

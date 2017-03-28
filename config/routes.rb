@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
 	#Sessions routes 
 	
-	get "/sessions/new" => "sessions#new"
+	get "/login" => "sessions#new"
 
 	post "/sessions" => "sessions#create"
 
@@ -28,16 +28,18 @@ Rails.application.routes.draw do
 
 	post "/login" => "sessions#new"
 
+	get "/libraries/new" => "libraries#new", as: "new_library"
+
+
 
 	
-
 
 	#Category routes
 	resources :categories
 
 	 
 	
- 	get "/categories/posts/:category_id" => "posts#index"
+ 	# get "/categories/:id" => "posts#index"
 
 	
 

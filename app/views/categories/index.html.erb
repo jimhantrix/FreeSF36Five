@@ -1,6 +1,5 @@
 
-
-  <div class="container">
+ <div class="container">
 
           <!-- Jumbotron Header -->
 
@@ -14,9 +13,6 @@
             
           </header>
   </div>
-
-
-
 
 
   <section>
@@ -33,40 +29,18 @@
          <div class="col-sm-4">
 
             <div class="indexPage"><br><br>
-            
-
+        
             <container>
 
+              <h1>
+              <%= link_to category.category, "/categories/#{category.id}" %><h1>
 
-      
-    
-              <h1><%= link_to category.category, "/categories/posts/#{category.id}" %><h1>
-
-
-              <div>
-                
-              
-              
-               
-                
-              </div>
-                <img src="#">
-                <div class="city">
-   
-              
-                
-
-              </div>
-            
-
-
-              <section>
-                <div>
-                    hello
-                 </div>
-              </section>
-
+              <img src="<%=category.avatar.url(:medium)%>">
             </div>
+
+            <section>
+            
+            </section>
            
              <a href="/posts/new"" class="btn btn-primary btn-large"> Add a Post!</a>
              <a href="/posts/new"" class="btn btn-primary btn-large"> Add to My categories </a>
@@ -75,17 +49,7 @@
             <br>
 
         </div>
-
-
-                          
-        
-
-        <% end %>
-
-
-    
-        
-
+      <% end %>
 </div>
 
 

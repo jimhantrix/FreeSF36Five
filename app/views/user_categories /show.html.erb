@@ -1,0 +1,75 @@
+
+
+
+
+  <section>
+
+
+    <div class="row">
+
+      <table>
+
+      <tr>
+
+        <% @categories.all.each do |category| %>
+
+         <div class="col-sm-4">
+
+            <div class="Show Page"><br><br>
+          
+            <container>
+    
+              <h1><%= link_to category.category, "/categories/posts/#{category.id}" %><h1>
+
+
+              <div> 
+              </div>
+                <img src="#">
+                <div class="city">
+
+              </div>
+        
+              <section>
+                <div>
+                    
+                 </div>
+              </section>
+
+            </div>
+           
+             <a href="/posts/new"" class="btn btn-primary btn-large"> Add a Post!</a>
+
+            <br>
+            <br>
+
+        </div>
+
+
+                          
+        
+
+        <% end %>
+</div>
+
+
+        
+
+           
+           
+            
+            
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,70 +1,32 @@
-<div class="container">
 
-        <!-- Jumbotron Header -->
+<div>
 
-        <br><br>
-        
-        <header class="jumbotron hero-spacer">
-
-            <h1>FreeSF36Five</h1>
-            <p>Category Show page </p>
-            <P>THIS WILL SHOW SELECTED CATEGORY'S POST</P>
-
-       
-        </header>
+ <h1 class="jumbotron hero-spacer">
+ </h1><h1><%= @category.category %> Posts</h1>
 </div>
 
 
 
-</div>   
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Images</th>
+    <th>Link to Post</th>
+ </tr>
 
 
-  <div>
+    <% @posts.each do |post|%> 
 
-      <div class="thumbnail">
+  <tr>
+	<td><%=post.title%></td>
+    <td><%=post.description%></td>
+    <td><img src="<%=post.avatar.url(:medium)%>""></td>
+    <td><%=post.id%></td>
+    <%end%>
+  </tr>
 
-                
+  
+ 
 
-        <div class="caption">
-               
-                        
-          <table>
-
-            <tr>
-      
-              <ul>
-
-
-                  
-
-                    <h1>
-                      
-                      *******************************
-                      
-                    </h1>
-                 
-              </ul>
-            </tr>
-
-          </table>
-        </div>
-      </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-        
-   
-
-
-
-
-            
+</table>

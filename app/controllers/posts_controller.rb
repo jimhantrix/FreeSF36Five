@@ -1,13 +1,13 @@
 
 class PostsController < ApplicationController
 
-	 # before_ation :auntheticate_user! 
+	  # before_ation :auntheticate_user! 
 
-	  #before_action :authenticate_admin!, except: [:index, :show, :search]
+	  # before_action :authenticate_admin!, except: [:index, :show, :search]
 
+   
 
-
-
+    
 	 # index method 
 
 	def index 
@@ -33,18 +33,28 @@ class PostsController < ApplicationController
 	#create method 
 	def create
 
-
-	 	post = Post.create(
+	 	post = Post.new(
 	 		
 	 		title: params[:title],
 	 		description: params[:description],
-	 		category_id: params[:category_id],
-	 		
+	 		category_id: params[:category_id][:id],
+	 		avatar: params[:avatar],
+	 		user_id: current_user.id
 	 	)
 
+	 	if  post.save 
 	 	flash[:success] = "post successfully created!"
 	 	redirect_to "/posts/#{post.id}"
+	 	else 
+	 		flash[:danger] = "Post not saved"
+	 		redirect_to "/posts/new"
+	 	end 
 	end
+
+
+	def avatar
+
+	end 
 
 
 
@@ -65,7 +75,11 @@ class PostsController < ApplicationController
 	end 
 
 
+	def avatar
 
+
+
+	end 
 
 	#show method 
 
@@ -81,11 +95,11 @@ class PostsController < ApplicationController
 
 	 	post = Post.find_by(id: params[:id])
 
-	 	post.update(status: "Post removed")
+	 	post.destroy
 
 	 	flash[:success] = "Post removed"
 
-	 	redirect_to "/categories/index"
+	 	redirect_to "/categories"
 	end
 
 
@@ -101,6 +115,12 @@ class PostsController < ApplicationController
     @posts = Post.where("title LIKE ?", "%#{search_term}%")
     render :index
   end
+
+  def search 
+
+  	@post = Post.find_by(id: params[:id])
+
+  end 
 
 
 end
