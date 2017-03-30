@@ -33,123 +33,23 @@
 	end 
 
 
-	post = Post.create(
 
-		category_id: "1",
-		title: "Books",
-		description: "Free novels and reference books",
-		user_id: "1",
-		avatar_file_name: "",
-		avatar_content_type: "",
-		
-	)
+    100.times do 
 
 
-	post = Post.create(
+     Posts.create(
+        description: Faker::Internet.email,
+        title: Faker::Internen.password,
+        user_categories: Faker::Name.first_name,
+        user_id: Faker::Name.last_name
+        category_id: Faker::Name.last_name
+        user_id: Faker::Name.last_name
+        avatar_file_name: Faker::Internen.password,
+        avatar_content_type: Faker::Name.first_name,
+        avatar_file_size: Faker::Name.last_name
+      ) 
 
-		category_id: "1",
-		title: "Free couch",
-		description: "free brown leather couch",
-		user_id: "2",
-		avatar_file_name:""
-				
-	)
-
-
-	post = Post.create(
-
-		category_id: "2",
-		title: "Drilling machines",
-		description: "Full size workshop drill",
-		user_id: "3",
-		avatar_file_name: ""
-		
-		
-	)
-
-
-	post = Post.create(
-
-		category_id: "3",
-		title:"Clothes",
-		description:"Mens clothes",
-		user_id: "3",
-		avatar_file_name:""
-				
-	)
-
-
-	post = Post.create(
-
-		category_id: "3",
-		title: "Hangers",
-		description:"50 hangers",
-		user_id: "3",
-		avatar_file_name:""
-				
-	)
-
-
-	post = Post.create(
-
-		category_id:"5",
-		title:"Lp's",
-		description: "80's Lps",
-		user_id: "4",
-		avatar_file_name: ""
-		
-		
-	)
-
-
-
-	post = Post.create(
-
-		category_id: "1",
-		title:"Dinning Table",
-		description: "Dinning Table with seats ",
-		user_id: "5",
-		avatar_file_name: ""
-		
-		
-
-	)
-
-
-	post = Post.create(
-
-		category_id: "5",
-		title: "Tv ",
-		description: "LG plasma tv",
-		user_id:"5",
-		avatar_file_name: ""
-		
-		
-
-	)
-
-
-	post = Post.create(
-
-		category_id: "6", 
-		title: "Speakers",
-		description: "Speakers in Good condition",
-		user_id: "9",
-		avatar_file_name:""
-				
-	)
-
-
-	post = Post.create(
-
-		category_id: "6", 
-		title: "Cushions",
-		description: "Cushions in good condition",
-		user_id: "10",
-		avatar_file_name:""
-				
-	)
-
+end 
 
 
 	

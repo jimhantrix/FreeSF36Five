@@ -2,31 +2,52 @@
 <div>
 
  <h1 class="jumbotron hero-spacer">
- </h1><h1><%= @category.category %> Posts</h1>
+
+ <%= @category.category %> Posts</h1>
+
+ </h1>
+
 </div>
 
 
 
 <table>
   <tr>
+
     <th>Title</th>
     <th>Description</th>
     <th>Images</th>
-    <th>Link to Post</th>
- </tr>
+    
 
-
-    <% @posts.each do |post|%> 
-
-  <tr>
-	<td><%=post.title%></td>
-    <td><%=post.description%></td>
-    <td><img src="<%=post.avatar.url(:medium)%>""></td>
-    <td><%=post.id%></td>
-    <%end%>
   </tr>
 
-  
- 
+
+    <%@posts.each do |post|%> 
+
+  <tr>
+    
+  	<td>
+      <a href="/posts/<%=post.id%>" class="list-group-item"><%=post.title%></a>
+      
+    </td>
+
+    
+    <td>
+      <%=post.description%>
+        
+    </td>
+
+    <td>
+
+      <img src="<%=post.avatar.url(:medium)%>"">
+
+    </td>
+
+    
+
+      <%end%>
+
+
+  </tr>
 
 </table>

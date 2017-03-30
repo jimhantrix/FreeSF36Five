@@ -1,66 +1,81 @@
 
- <div class="container">
-
-          <!-- Jumbotron Header -->
-
-          <br><br>
-          
-          <header class="jumbotron hero-spacer">
-
-              <h1>FreeSF36Five</h1>
-
-        
-            
-          </header>
-  </div>
 
 
-  <section>
+<div class="container">
 
 
-    <div class="row">
+  <!-- Jumbotron Header -->
 
-      <table>
+  
+  <header class="jumbotron header">
 
-      <tr>
+   <h1>FreeSF36Five</h1>
 
-        <% @categories.all.each do |category| %>
-
-         <div class="col-sm-4">
-
-            <div class="indexPage"><br><br>
-        
-            <container>
-
-              <h1>
-              <%= link_to category.category, "/categories/#{category.id}" %><h1>
-
-              <img src="<%=category.avatar.url(:medium)%>">
-            </div>
-
-            <section>
-            
-            </section>
-           
-             <a href="/posts/new"" class="btn btn-primary btn-large"> Add a Post!</a>
-             <a href="/posts/new"" class="btn btn-primary btn-large"> Add to My categories </a>
-
-            <br>
-            <br>
-
-        </div>
-      <% end %>
+    <p>Free Stuff</p>
 </div>
 
 
-        
+<section>
 
-           
-           
-            
-            
 
-    
+
+
+  <div class="row">
+
+
+    <table>
+
+      <tr>
+       
+
+        <% @categories.all.each do |category| %>
+
+          <div class="col-sm-4">
+
+            <div class="indexPage"><br><br>
+            
+           
+
+              <h1><%= link_to category.category, "/categories/#{category.id}" %></h1>
+
+                <img src="<%=category.avatar.url(:medium)%>">
+              </div><hr>
+
+              
+              
+              <a href="/posts/new"" class="btn btn-primary btn-large"> Add a Post!</a>
+
+              <a href="/posts/new"" class="btn btn-primary btn-large"> Add to My categories </a>
+
+              
+            </div>
+          </div>
+        <% end %>
+          
+        </div>
+      </tr>
+  </table>
+
+</section><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+          
+
+          
+          
+          
+          
+
+          
 
 
 

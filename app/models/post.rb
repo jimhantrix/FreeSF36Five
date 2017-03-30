@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 	has_many :images
 
 	has_attached_file :avatar,
-                    :styles => { :medium => "150x150>", :thumb => "70x70#" },
+                    :styles => { :medium => "200x2000>", :thumb => "90x90#" },
                     :default_url => "/images/:style/missing.png"
 
   validates_attachment :avatar, :presence => true,

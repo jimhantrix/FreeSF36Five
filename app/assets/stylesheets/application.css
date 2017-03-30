@@ -19,5 +19,17 @@
 }*/
 
 .container {
-	padding-top: 70px;
+	padding-top: 20px;
 }
+body {
+  font-family: 'Spirax', cursive;
+font-family: 'Inconsolata', monospace;
+background-image: url("https://www.bypeople.com/wp-content/uploads/2014/05/light-live-background-css.jpg");
+background-size: 100% 100%;
+background-repeat: no-repeat;
+}
+
+.opaqueBackground {
+	background-color: fff#;
+}
+

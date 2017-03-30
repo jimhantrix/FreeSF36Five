@@ -13,7 +13,8 @@ class PostsController < ApplicationController
 	def index 
 
 		# find an array of all posts with a cetegory id that matches the url parameters
-		@posts = Post.where(category_id: params[:category_id])
+		# @posts = Post.where(category_id: params[:category_id])
+		@posts = Post.all
 
 	end 
 

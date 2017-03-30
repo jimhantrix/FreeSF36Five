@@ -1,59 +1,61 @@
 
     <!-- Page Content -->
-    <td>
-    <h1 class="jumbotron hero-spacer"><br><br>
-    Your Current Post</h1>
+    <td><br><br>
+    <h1 class="jumbotron hero-spacer"><br>
+      Post</h1>
 
     </td>
 
     <h2 class ="text-center row ">
-    <br></br><br>
+   
     <div class="container">
+
 
         <!-- Jumbotron Header -->
         
-        <di><br><br>
+        <di>
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
                     <div class="product_single">
+                        <div class="panel panel-primary">
+                            <h1><%=@post.category.category%></h1></div>
+                        
 
-                        <h1><%=@post.category.category%></h1>
+                            <div class="panel panel-primary">
 
-                        
-                        <h2>Title: <%=@post.title%></h2>
-                        <p>Description: <%=@post.description%></p>
-                        
-                        <div>
-                            <img src="<%=@post.avatar.url(:medium) %>">
+                            <h2><a href="posts/#{@post.id}" class="list-group-item">Title: <%=@post.title%></h2></a>
+                            
+                            <p>Description: <%=@post.description%></p>
+                            
+                            <div>
+                                <img src="<%=@post.avatar.url(:medium) %>">
 
-                        </div>
-                        <span>
-                        
-                        
-                        
-                        </span>
+                            </div><br>
+                        </div>   
                     </div>
                 </div>
             </div>
         </div>
                 
-        <p>
+     
 
         <%= form_tag "/posts/#{@post.id}", method: :delete do %>
 
               <input class="btn btn-default" type="submit" value="Destroy Post">
 
+
             <% end %>
 
-            <div class="form-group">
+            
 
            <a class="btn btn-default" href="/posts/<%= @post.id %>/edit" role="button">Edit</a>
-           </div>
+          
 
         
 
 
 
+  
 
 
 

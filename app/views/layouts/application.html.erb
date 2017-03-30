@@ -5,127 +5,175 @@
   <head>
 
     <title>FreeSF-36Five|| Jim Tekanyo</title>
-    <%= csrf_meta_tags %>
+    
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Spirax" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+
 
 
 
   <body>
 
+    
 
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-
-
-          <a class="navbar-brand" href="/">FreeSF36Five</a>
-        </div>
-
-          <div class="collapse navbar-collapse" id=   "bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+    <header>
 
 
 
-            <li class="dropdown">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
 
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events<span class="caret"></span></a>
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
 
-            <ul class="dropdown-menu">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 
-              <li><a href="#">San Francisco Calendar</a></li>
-
-              <li><a href="/#">Oakland Calendar</a></li>
-
-              <li><a href="/#">East Bay Calendar</a></li>
-
-              <li><a href="/#">Bay area Calendar</a></li>
-
-              <li><a href="/#">North Bay area</a></li>
-
-              <li><a href="/#">South Bay area</a></li>
-              <li><a href="/#">Peninsula Events</a></li>
-              </ul>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
 
 
-              
-              </li><li class="dropdown">
+            <a class="navbar-brand" href="/">FreeSF36Five</a>
+            </div>
+
+              <div class="collapse navbar-collapse" id=   "bs-example-navbar-collapse-1">
 
 
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Member<span class="caret"></span></a>
+                <ul class="nav navbar-nav">
 
-              <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events<span class="caret"></span></a>
 
-                <li><a href="/login">Log In</a></li>
+                  <ul class="dropdown-menu">
 
+                    <li><a href="https://www.events12.com/sanfrancisco/">San Francisco Calendar</a></li>
 
-                <li><a href="/signup">Sign Up</a></li>
+                    <li><a href="https://www.visitoakland.com/things-to-do/events/">Oakland Calendar</a></li>
 
-              </ul></li>
+                    <li><a href="http://www.eastbayexpress.com/oakland/EventSearch?narrowByDate=Today">East Bay Calendar</a></li>
 
+                    <li><a href="http://www.visitsfbayarea.com/events">Bay area Calendar</a></li>
 
-          <li><a href="https://www.sfstation.com/calendar">Today</a></li>
+                    <li><a href="http://www.bohemian.com/">North Bay area</a></li>
 
-          <li><a href="http://sf.funcheap.com/weekend/">Weekend</a></li>
-          <li><a href="/">Free</a></li>
-
-          <li><a href="/posts/new">Add Post</a></li>
+                    <li><a href="http://www.sanjose.com/calendar/">South Bay area</a></li>
+                    
+                    <li><a href="https://www.livingsocial.com/things-to-do/sf-peninsula">Peninsula Events</a></li>
+                  </ul>
+                </li>
 
 
 
 
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Member<span class="caret"></span></a>
+                </li>
+
+                <ul class="dropdown-menu">
+
+                  <li><a href="/login">Log In</a></li>
 
 
+                  <li><a href="/signup">Sign Up</a></li>
 
-          <%= form_tag "/category_id/:id", :class => "navbar-form navbar-left", method: :post do %>
-
-          
-          <div class="form-group">
-
-            <input type="text" class="form-control" placeholder="Search Posts" name="search">
-          </div>
-          <button type="submit" class="btn btn-default">Search </button>
-
-        <% end %>
+                </ul>
 
 
+                <li>
+                    <li><a href="https://www.sfstation.com/calendar">Today</a></li>
 
+                    <li><a href="http://sf.funcheap.com/weekend/">Weekend</a></li>
+                    <li><a href="http://sf.funcheap.com/">Free</a></li>
 
-          
-        </ul><br>
+                    <li><a href="/posts/new">Add Post</a></li>
+                </li>
 
-        <div>
+                <%= form_tag "/category_id/:id", :class => "navbar-form navbar-left", method: :post do %>
 
-      <a href="https://twitter.com/SFWeekly" class="twitter-follow-button" data-show-count="false">
+            
+                      <div class="form-group">
+
+                        <input type="text" class="form-control" placeholder="Search Posts" name="search">
+                      </div>
+                      <button type="submit" class="btn btn-default">Search </button>
+                      <a href="https://twitter.com/SFWeekly" class="twitter-follow-button" data-show-count="false">
       
-      </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br><br>
-      </div>
-    </nav>
+                    </a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    
+
+            <% end %>
+      </nav>
+
+
+  </header>
+  
+
 
     <div class="container text-center">  
      <% flash.each do |key, message| %>
-                <%= message %>
+      <%= message %>
       <% end %>
 
       <%= yield %>
+
+    <section id="contact" class="contact bg-primary">
+        <div class="container">
+            <h2>We <i class="fa fa-heart"></i> new friends!</h2>
+            <ul class="list-inline list-social">
+                <li class="social-twitter">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="social-facebook">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="social-google-plus">
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2016 FreeSF36Five. All Rights Reserved.</p>
+            <ul class="list-inline">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul><script src="lib/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js"></script>
+        </div>
+    </footer>
     </div>
 
-  </body>
 
-  
+
+  </body>
 
 
 </html>

@@ -1,50 +1,71 @@
+  <!-- <section class="content-section video-section">
+    <div class="pattern-overlay">
+      <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=Oo6iAxf4si0',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
+    
+ -->
 
 
-<h2 class="text-center row">
+      <link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
+      <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+
+  
 
 
-  <section>
-    <div class="row">
-
-      <div class="col-sm-8 col-sm-offset-2">
 
 
-        <div class="product_single">
 
-          <h1 class="jumbotron hero-spacer">New Post</h1>
 
-            <%= form_tag '/posts', multipart: true, method: :post do %>
 
-          <div>
+      <h2 class="text-center row">
+
+
    
-            </div>
-              
-            <div>
+      <div class="row">
 
-              
-              <%= label_tag :category_id, nil, id: "black-color" %>
-              
-              <%= collection_select :category_id, :id,
+        <div class="opaqueBackground col-sm-8 col-sm-offset-2">
 
 
-               Category.all.order('category ASC'), :id, :category, class: "form-control" %>
-          
-            </div>
-               <div>
-                <%=label_tag :title %>
-                <%=text_field_tag :title %>
+          <div class="product_single">
+
+            <h1 class="jumbotron hero-spacer">New Post</h1>
+
+              <%= form_tag '/posts', multipart: true, method: :post do %>
+
+              <div>
+                  <%= label_tag :category_id, nil, id: "black-color" %>
+              </div>
                 
-                <div>
-               <%= label_tag :description %>
-                <%= text_field_tag :description %>
-                <%=file_field_tag :avatar %>
-                <%= submit_tag "Create Post" %>
-              </div>
+              <div>
+                <%= collection_select :category_id, :id,
+                 Category.all.order('category ASC'), :id, :category, class: "form-control" %>
               </div>
 
-              
-            <% end %>
+
+                 <div>
+                  <%=label_tag :title %>
+                  <%=text_field_tag :title %>
+                  <div>
+
+                  <div>
+                 <%= label_tag :description %>
+                  <%= text_field_tag :description %>
+                  </div>
+
+                  <div>
+                  <%=file_field_tag :avatar %>
+                  <%= submit_tag "Create Post" %>
+                  </div>
+                
+
+                
+              <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    
+  </h2>
+  <br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br>
+ <!--  </div>
+  </section> -->
