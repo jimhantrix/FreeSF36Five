@@ -18,10 +18,16 @@
                 <div class="col-sm-8 col-sm-offset-2">
                     <div class="product_single">
                         <div class="panel panel-primary">
-                            <h1><%=@post.category.category%></h1></div>
+
+                            <h1><%=@post.category.category%></h1>
+                            
+
+                            </div>
                         
 
                             <div class="panel panel-primary">
+                                          <span class="glyphicons glyphicons-folder-plus"></span>
+
 
                             <h2><a href="posts/#{@post.id}" class="list-group-item">Title: <%=@post.title%></h2></a>
                             
@@ -34,21 +40,25 @@
                         </div>   
                     </div>
                 </div>
+
             </div>
+            <input class="btn btn-default" type="submit" value="Destroy Post">
+            <a class="btn btn-default" href="/posts/<%= @post.id %>/edit" role="button">Edit</a>
+
         </div>
                 
      
 
         <%= form_tag "/posts/#{@post.id}", method: :delete do %>
 
-              <input class="btn btn-default" type="submit" value="Destroy Post">
 
 
             <% end %>
 
+            <br><br><br><br>
+
             
 
-           <a class="btn btn-default" href="/posts/<%= @post.id %>/edit" role="button">Edit</a>
           
 
         

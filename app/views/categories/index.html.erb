@@ -30,22 +30,34 @@
 
         <% @categories.all.each do |category| %>
 
+
+
+
           <div class="col-sm-4">
 
-            <div class="indexPage"><br><br>
+            <div class="indexPage"><br><hr>
+            <a href="#">
+          <span class="glyphicon glyphicon-envelope"></span>
+        </a>
+
             
            
 
               <h1><%= link_to category.category, "/categories/#{category.id}" %></h1>
 
+
+               
                 <img src="<%=category.avatar.url(:medium)%>">
+
               </div><hr>
 
               
               
               <a href="/posts/new"" class="btn btn-primary btn-large"> Add a Post!</a>
 
-              <a href="/posts/new"" class="btn btn-primary btn-large"> Add to My categories </a>
+              <a href="#" class="btn btn-primary btn-large" id= "addToMyCategories"onclick="changeColor('addToMyCategories'); return false;"> Add to My categories </a>
+
+
 
               
             </div>
@@ -56,11 +68,30 @@
       </tr>
   </table>
 
-</section><br><br>
+
+<script>
+function changeColor(id)
+{
+  document.getElementById(id).style.color = "grey"; // forecolor
+  document.getElementById(id).style.backgroundColor = "brown"; // backcolor
+}
+</script>
+
+
+
+
+
+
+
+</section>
+<br><br>
 <br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br>
+
+
+
 
 
 
